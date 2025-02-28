@@ -1,128 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About</title>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
-        <style>
-            #content {
-                /* margin: 0 20%; */
-                padding: 1% 5% 10%;
-                background-color: lightblue;
-                --bs-bg-opacity: 0.5;
-            }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hemant Parmar - Profile</title>
+		<style>
+			/* Global Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: Arial, sans-serif;
+				line-height: 1.6;
+				background: #f4f4f4;
+				color: #333;
+				transition: background 0.3s, color 0.3s;
+			}
+			.container {
+				width: 80%;
+				margin: auto;
+				overflow: hidden;
+				padding: 20px 0;
+			}
 
-            #banner {
-                width: 100%;
-            }
+			/* Header */
+			header {
+				background: #333;
+				color: #fff;
+				/* padding: 20px 0; */
+				text-align: center;
+				position: relative;
+			}
+			header h1 {
+				margin-bottom: 10px;
+			}
 
-            body {
-                background-color: aqua;
-                background-repeat: repeat;
-                background-size: 100%;
-                background-attachment: fixed;
-            }
+			.navbar {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
 
-            #heading {
-                color: red;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-                    "Helvetica Neue", sans-serif;
-                text-align: center;
-            }
+			nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+			}
+			nav ul li {
+				margin: 0 15px;
+			}
+			nav ul li a {
+				color: #fff;
+				text-decoration: none;
+				font-size: 16px;
+				transition: color 0.3s ease;
+			}
+			nav ul li a:hover {
+				color: #f4f4f4;
+			}
 
-            .subheading {
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
-            }
+			/* Dark Mode Toggle Button */
+			.dark-mode-toggle {
+				position: absolute;
+				right: 20px;
+				background: #fff;
+				border: none;
 
-            .lorem {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <header class="bg-primary text-white text-center">
-            <h1>About</h1>
-        </header>
-        <div class="container my-5">
-            <section>
-                <h2>About</h2>
-            </section>
-            <div id="content">
-                <img
-                    class="img-fluid"
-                    id="banner"
-                    src="jumbotron.jpg"
-                    alt="a general landscape image."
-                />
-                <hr />
-                <!-- <h2 class="subheading">about me</h2> -->
-                <p class="lorem Lead">
-                    Hello, I am Hemant Parmar. I am currently a sophomore at VIT
-                    Bhopal University where I am pursuing my B.Tech. in Computer
-                    Science and Engineering. I have learnt web development
-                    especially MERN stack. I also have some experience with
-                    python back-end frameworks. I found myself very good at
-                    python having practiced it's major libraries like numpy,
-                    pandas, sckit-learn, flask, matplotlib and so on. Problem
-                    solving is also a comfortable field for me. I have practised
-                    DSA covering Graphs, Trees, Backtracking, linked lists and
-                    not-so-advanced dynamic programming. I also good at learning
-                    topics more easily which are generally estimated as
-                    difficult.
-                </p>
-            </div>
-            <section>
-                <h2><a href="education.html">Education</a></h2>
-            </section>
-            <section>
-                <h2><a href="languages.html">Languages</a></h2>
-            </section>
-            <section>
-                <h2><a href="skills.html">Skills</a></h2>
-            </section>
-            <section>
-                <h2><a href="projects.html">Projects</a></h2>
-            </section>
-        </div>
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item">
-                    <a
-                        href="hemantparmar2022@vitbhopal.ac.in"
-                        class="nav-link px-2 text-muted"
-                        >Email</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                        href="https://www.linkedin.com/in/hemant-parmar-968543251"
-                        class="nav-link px-2 text-muted"
-                        >LinkedIn</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">GitHub</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">Other1</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">Other2</a>
-                </li>
-            </ul>
-            <p class="text-center text-muted">© Hemant Parmar</p>
-        </footer>
+				cursor: pointer;
+				border-radius: 4px;
+				font-weight: bold;
+				transition: background 0.3s;
+			}
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </body>
+			/* Hide the checkbox */
+			.hidden-checkbox {
+				display: none;
+			}
+
+			.dark-mode-toggle {
+				background: #e5e7eb;
+				border-radius: 50%;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				width: 50px;
+				height: 50px;
+				transition: background 0.3s, transform 0.5s ease-in-out;
+			}
+
+			/* Rotation Effect */
+			.dark-mode-toggle:has(.hidden-checkbox:checked) {
+				transform: rotate(180deg);
+			}
+
+			.dark-mode-toggle:hover {
+				background: #d1d5db;
+			}
+
+			body:has(.hidden-checkbox:checked) .dark-mode-toggle {
+				background: #374151;
+			}
+
+			body:has(.hidden-checkbox:checked) .dark-mode-toggle:hover {
+				background: #4b5563;
+			}
+
+			/* Icon Wrapper */
+			.icon-wrapper {
+				position: relative;
+				width: 24px;
+				height: 24px;
+			}
+
+			/* Icon Styles */
+			.icon {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				stroke: currentColor;
+				transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+			}
+
+			.moon {
+				opacity: 0;
+				transform: rotate(-180deg);
+			}
+
+			/* Toggle between sun and moon */
+			.hidden-checkbox:checked + .dark-mode-toggle .sun {
+				opacity: 0;
+				transform: rotate(180deg);
+			}
+
+			.hidden-checkbox:checked + .dark-mode-toggle .moon {
+				opacity: 1;
+				transform: rotate(0deg);
+			}
+
+			/* Change Theme */
+			body:has(.hidden-checkbox:checked) {
+				background: #111827;
+				color: #f3f4f6;
+			}
+
+			/* Profile Header Section */
+			.profile-header {
+				background: url("profile-bg.jpg") no-repeat center center/cover;
+				height: 400px;
+				position: relative;
+			}
+			.profile-header::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.5);
+			}
+			.profile-info {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				color: #fff;
+				z-index: 1;
+			}
+			.profile-info h1 {
+				font-size: 48px;
+				margin-bottom: 10px;
+			}
+			.profile-info p {
+				font-size: 24px;
+			}
+			/* Sections */
+			section {
+				padding: 60px 0;
+			}
+			.about,
+			.projects,
+			.skills,
+			.contact {
+				background: #fff;
+				margin-bottom: 20px;
+				padding: 30px;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+				transition: background 0.3s, color 0.3s;
+			}
+
+			/* About Section */
+			.about h2 {
+				margin-bottom: 20px;
+			}
+
+			.about div {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em;
+				justify-content: center;
+			}
+
+			.about div img {
+				float: left;
+				border-radius: 50%;
+				width: 15em;
+				height: 15em;
+				object-fit: cover;
+			}
+
+			#aboutdetails {
+				display: inline;
+				width: 45em;
+			}
+
+			#aboutdetails summary {
+				display: block;
+				cursor: pointer;
+			}
+			#aboutdetails summary:focus {
+				outline: none;
+			}
+			#aboutdetails[open] {
+				/* padding-bottom: 25px;
+				padding-top: 10px; */
+				animation: open 0.2s linear;
+			}
+			#readmore {
+				text-decoration: underline;
+			}
+			#aboutdetails[open] #readmore {
+				display: none;
+			}
+			#readless {
+				display: none;
+			}
+			#aboutdetails[open] #readless {
+				display: block;
+				text-decoration: underline;
+			}
+
+			::-webkit-details-marker {
+				display: none;
+			}
+
+			@keyframes open {
+				0% {
+					opacity: 0;
+					transform: translateY(-10px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			/* Projects Section */
+			.projects h2 {
+				margin-bottom: 20px;
+			}
+			.projects {
+				margin-bottom: 20px;
+			}
+			.projects h3 {
+				margin-bottom: 10px;
+			}
+
+			.project-card {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 20px;
+				margin-top: 20px;
+				background: #fff;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+				transition: background 0.3s, color 0.3s;
+			}
+
+			.dark-mode .project-card {
+				background: #1e1e1e;
+				box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+			}
+
+			.project-card img {
+				width: 100%;
+				display: block;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.project-card .card-content {
+				padding: 20px;
+			}
+
+			.project-card .card-content h3 {
+				margin-bottom: 10px;
+			}
+
+			.project-card .card-content p {
+				margin: 0;
+			}
+
+			#projectdetails li {
+				list-style-type: circle;
+			}
+
+			/* Skills Section */
+			.skills h2 {
+				margin-bottom: 20px;
+			}
+			.skills ul {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.skills ul li {
+				background: #e2e2e2;
+				margin: 5px;
+				padding: 10px 15px;
+				border-radius: 4px;
+			}
+			/* Contact Section */
+			.contact h2 {
+				margin-bottom: 20px;
+			}
+			.contact form {
+				display: flex;
+				flex-direction: column;
+			}
+			.contact form input,
+			.contact form textarea {
+				padding: 10px;
+				margin-bottom: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			.contact form button {
+				padding: 10px;
+				border: none;
+				border-radius: 4px;
+				background: #333;
+				color: #fff;
+				font-size: 16px;
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+			.contact form button:hover {
+				background: #555;
+			}
+			/* Footer */
+			footer {
+				background: #333;
+				color: #fff;
+				text-align: center;
+				padding: 20px;
+			}
+			/* Dark Mode Styles */
+			.dark-mode {
+				background: #121212;
+				color: #e0e0e0;
+			}
+			.dark-mode header,
+			.dark-mode footer {
+				background: #1e1e1e;
+			}
+			.dark-mode nav ul li a {
+				color: #e0e0e0;
+			}
+			.dark-mode .about,
+			.dark-mode .projects,
+			.dark-mode .skills,
+			.dark-mode .contact {
+				background: #1e1e1e;
+				color: #e0e0e0;
+				box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+			}
+			.dark-mode .skills ul li {
+				background: #333;
+			}
+			.dark-mode .contact form input,
+			.dark-mode .contact form textarea {
+				background: #333;
+				color: #e0e0e0;
+				border: 1px solid #555;
+			}
+			.dark-mode .contact form button {
+				background: #555;
+			}
+
+			.onmediumandsmall {
+				display: none;
+			}
+
+			@media only screen and (max-width: 1080px) {
+				.notonmedium {
+					display: none;
+				}
+
+				.onmediumandsmall {
+					display: block;
+				}
+
+				.profile-info h1 {
+					font-size: 40px;
+					/* margin-bottom: 10px; */
+				}
+				.profile-info p {
+					font-size: 24px;
+					font-weight: normal;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				/* body {
+					background-color: lightblue;
+				} */
+				.container {
+					width: 100%;
+				}
+				header h1 {
+					display: none;
+				}
+
+				h2 {
+					text-align: center;
+				}
+
+				.dark-mode-toggle {
+					position: fixed;
+					right: 10px;
+					bottom: 10px;
+				}
+
+				.navbar {
+					justify-content: center;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header with Navigation and Dark Mode Toggle -->
+		<header>
+			<div class="container navbar">
+				<h1>Hemant Parmar</h1>
+
+				<input
+					type="checkbox"
+					id="theme-toggle"
+					class="hidden-checkbox" />
+				<label for="theme-toggle" class="dark-mode-toggle">
+					<div class="icon-wrapper">
+						<svg
+							class="icon sun"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round">
+							<circle cx="12" cy="12" r="5"></circle>
+							<line x1="12" y1="1" x2="12" y2="3"></line>
+							<line x1="12" y1="21" x2="12" y2="23"></line>
+							<line
+								x1="4.22"
+								y1="4.22"
+								x2="5.64"
+								y2="5.64"></line>
+							<line
+								x1="18.36"
+								y1="18.36"
+								x2="19.78"
+								y2="19.78"></line>
+							<line x1="1" y1="12" x2="3" y2="12"></line>
+							<line x1="21" y1="12" x2="23" y2="12"></line>
+							<line
+								x1="4.22"
+								y1="19.78"
+								x2="5.64"
+								y2="18.36"></line>
+							<line
+								x1="18.36"
+								y1="5.64"
+								x2="19.78"
+								y2="4.22"></line>
+						</svg>
+						<svg
+							class="icon moon"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round">
+							<path
+								d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+						</svg>
+					</div>
+				</label>
+
+				<nav>
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Profile Header -->
+		<div class="profile-header">
+			<div class="profile-info">
+				<h1>Hemant Parmar</h1>
+				<div class="my-roles notonmedium">
+					<p>Web Developer</p>
+					<p>Data Analyst</p>
+					<p>Python developer</p>
+				</div>
+
+				<p
+					class="typewrite"
+					data-period="2000"
+					data-type='[ "Web Developer", "Data Analyst", "Python developer" ]'>
+					<span class="wrap"></span>
+				</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- About Section -->
+			<section id="about" class="about">
+				<h2>About Me</h2>
+				<div>
+					<img src="myPhoto.jpg" alt="My Photo" />
+
+					<details id="aboutdetails">
+						<summary>
+							Hello, I am Hemant Parmar. I currently am a
+							pre-final year student at VIT where I am pursuing my
+							BTech in Computer Science and Engineering. I am a
+							curious person with a high level understanding of
+							almost all of computer science.
+							<p id="readmore">Read More..</p>
+							<p id="readless">Read Less..</p>
+						</summary>
+						<p>
+							I have been practicing and experimenting using
+							Python since 2020. I have practiced and understood
+							most of its major libraries like Numpy, Pandas,
+							Matplotlib and Sckit-learn for data analysis and
+							basic ML; Flask, FastAPI and little Django for
+							backend web develpement; and recently TensorFlow,
+							Keras and some new deep learning related libraries.
+							I also learnt HTML, CSS and JavaScript during the
+							Covid pandemic and then proceeded to learn Node,
+							React and Express. This gave me a deep understanding
+							of how the web work irrespective of frameworks.
+							Simulaneously, I spent time exploring how the system
+							works internally. I understood the inticracies of
+							operating sytems, DBMS, networks, parallel computing
+							and distributed systems through various free
+							lectures by MIT, Stanford and Harvard. To build and
+							grasp all these, I studied Data Structures and
+							ALgorithms effortlessly due to my prior command on
+							math and puzzle solving.
+						</p>
+					</details>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section id="projects" class="projects">
+				<h2>Projects</h2>
+				<div class="project-card">
+					<img src="ecoscan.png" alt="Ecoscan preview" />
+					<div class="card-content">
+						<h3>EcoScan</h3>
+
+						<div class="notonmedium">
+							<ul>
+								<li>
+									Developed app to analyse crop images
+									uploaded by users to detect if there is any
+									disease in the plants.
+								</li>
+								<li>
+									Technologies: React, FastAPI, TensorFlow
+								</li>
+								<li>
+									Role: Machine Learning and Backend Engineer
+								</li>
+								<li>
+									Utilized convolutional neural networks and
+									vision transformers to get up to 96%
+									accuracy with potato crops and 89% accuracy
+									with other crops.
+								</li>
+								<li>
+									Led the team of 5 members to contribute in
+									the design, testing and documentation of the
+									project
+								</li>
+								<li>
+									Created OpenAPI compliant backend which used
+									a lightweight CNN model for faster
+									responses.
+								</li>
+							</ul>
+						</div>
+						<details id="projectdetails" class="onmediumandsmall">
+							<summary>
+								Developed app to analyse crop images uploaded by
+								users to detect if there is any disease in the
+								plants.
+							</summary>
+							<p>
+								<li>
+									Technologies: React, FastAPI, TensorFlow
+								</li>
+								<li>
+									Role: Machine Learning and Backend Engineer
+								</li>
+								<li>
+									Utilized convolutional neural networks and
+									vision transformers to get up to 96%
+									accuracy with potato crops and 89% accuracy
+									with other crops.
+								</li>
+								<li>
+									Led the team of 5 members to contribute in
+									the design, testing and documentation of the
+									project
+								</li>
+								<li>
+									Created OpenAPI compliant backend which used
+									a lightweight CNN model for faster
+									responses.
+								</li>
+							</p>
+						</details>
+					</div>
+					<!-- Add more .project-card divs as needed -->
+				</div>
+				<div class="project-card">
+					<img src="socialfusion.png" alt="socialfusion preview" />
+					<div class="card-content">
+						<h3>SocialFusion</h3>
+						<div class="notonmedium">
+							<ul>
+								<li>
+									Combined the main features of popular social
+									media websites in order to make a simple and
+									inclusive social platform which promotes
+									positivity.
+								</li>
+								<li>
+									Technologies: React, Node, Express, MongoDB
+								</li>
+								<li>Role: Backend Developer</li>
+
+								<li>
+									Collaborated with front-end developers to
+									ensure cohesive integration of design and
+									functionality.
+								</li>
+							</ul>
+						</div>
+						<details id="projectdetails" class="onmediumandsmall">
+							<summary>
+								Combined the main features of popular social
+								media websites in order to make a simple and
+								inclusive social platform which promotes
+								positivity.
+							</summary>
+							<p>
+								<li>
+									Technologies: React, Node, Express, MongoDB
+								</li>
+								<li>Role: Backend Developer</li>
+								<li>
+									Collaborated with front-end developers to
+									ensure cohesive integration of design and
+									functionality.
+								</li>
+							</p>
+						</details>
+					</div>
+					<!-- Add more .project-card divs as needed -->
+				</div>
+				<div class="project-card">
+					<img src="geminiclient.png" alt="Gemini Client" />
+					<div class="card-content">
+						<h3>Client of Gemini</h3>
+						<div class="notonmedium">
+							<ul>
+								<li>
+									Combined the main features of popular social
+									media websites in order to make a simple and
+									inclusive social platform which promotes
+									positivity.
+								</li>
+								<li>
+									Technologies: React, Node, Express, MongoDB
+								</li>
+								<li>Role: Backend Developer</li>
+
+								<li>
+									Collaborated with front-end developers to
+									ensure cohesive integration of design and
+									functionality.
+								</li>
+							</ul>
+						</div>
+						<details id="projectdetails" class="onmediumandsmall">
+							<summary>
+								Developed and integrated a client application
+								for the Gemini AI model, enhancing functionality
+								and providing a better user experience.
+							</summary>
+							<p>
+								<li>Technologies: Svelte, Flask, Gemini API</li>
+
+								<li>
+									Used Svelte for optimizing UI
+									responsiveness, reducing bundle size, and
+									enhancing runtime efficiency
+								</li>
+							</p>
+						</details>
+					</div>
+					<!-- Add more .project-card divs as needed -->
+				</div>
+			</section>
+
+			<!-- Skills Section -->
+			<section id="skills" class="skills">
+				<h2>Skills</h2>
+				<ul>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>JavaScript</li>
+					<li>React</li>
+					<li>Node.js</li>
+					<li>Python</li>
+				</ul>
+			</section>
+
+			<!-- Contact Section -->
+			<section id="contact" class="contact">
+				<h2>Contact</h2>
+				<form id="contact-form">
+					<input
+						type="text"
+						name="from_name"
+						placeholder="Your Name"
+						required />
+					<input
+						type="email"
+						name="reply_to"
+						placeholder="Your Email"
+						required />
+					<textarea
+						name="message"
+						rows="5"
+						placeholder="Your Message"
+						required></textarea>
+					<button type="submit">Send Message</button>
+				</form>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2025 Hemant Parmar. All rights reserved.</p>
+			<a href="oldhome.html">old website</a>
+		</footer>
+
+		<!-- EmailJS SDK -->
+		<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script src="typewriter.js"></script>
+		<script>
+			// Initialize EmailJS with your user ID (public key)
+			emailjs.init("YOUR_USER_ID");
+		</script>
+		<!-- Dark Mode Toggle Script -->
+		<script>
+			const toggleButton = document.getElementById("theme-toggle");
+			toggleButton.addEventListener("click", () => {
+				document.body.classList.toggle("dark-mode");
+			});
+		</script>
+		<!-- External JS File for Sending Email -->
+		<script src="send-email.js"></script>
+	</body>
 </html>
