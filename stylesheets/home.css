@@ -1,0 +1,484 @@
+/* Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	background: #f4f4f4;
+	color: #333;
+	transition: background 0.3s, color 0.3s;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+	padding: 20px 0;
+}
+
+/* Header */
+header {
+	background: #333;
+	color: #fff;
+	/* padding: 20px 0; */
+	text-align: center;
+	position: relative;
+}
+
+header h1 {
+	margin-bottom: 10px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+nav ul li {
+	margin: 0 15px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+	color: #f4f4f4;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+	position: absolute;
+	right: 20px;
+	background: #fff;
+	border: none;
+
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: bold;
+	transition: background 0.3s;
+}
+
+/* Hide the checkbox */
+.hidden-checkbox {
+	display: none;
+}
+
+.dark-mode-toggle {
+	background: #e5e7eb;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	transition: background 0.3s, transform 0.5s ease-in-out;
+}
+
+/* Rotation Effect */
+.dark-mode-toggle:has(.hidden-checkbox:checked) {
+	transform: rotate(180deg);
+}
+
+.dark-mode-toggle:hover {
+	background: #d1d5db;
+}
+
+body:has(.hidden-checkbox:checked) .dark-mode-toggle {
+	background: #374151;
+}
+
+body:has(.hidden-checkbox:checked) .dark-mode-toggle:hover {
+	background: #4b5563;
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+	position: relative;
+	width: 24px;
+	height: 24px;
+}
+
+/* Icon Styles */
+.icon {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	stroke: currentColor;
+	transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.moon {
+	opacity: 0;
+	transform: rotate(-180deg);
+}
+
+/* Toggle between sun and moon */
+.hidden-checkbox:checked + .dark-mode-toggle .sun {
+	opacity: 0;
+	transform: rotate(180deg);
+}
+
+.hidden-checkbox:checked + .dark-mode-toggle .moon {
+	opacity: 1;
+	transform: rotate(0deg);
+}
+
+/* Change Theme */
+body:has(.hidden-checkbox:checked) {
+	background: #111827;
+	color: #f3f4f6;
+}
+
+/* Profile Header Section */
+.profile-header {
+	height: 400px;
+	position: relative;
+}
+
+.profile-header::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.profile-info {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #fff;
+	z-index: 1;
+}
+
+.profile-info h1 {
+	font-size: 48px;
+	margin-bottom: 10px;
+}
+
+.profile-info p {
+	font-size: 24px;
+}
+
+/* Sections */
+section {
+	padding: 60px 0;
+}
+
+.about,
+.projects,
+.skills,
+.contact {
+	background: #fff;
+	margin-bottom: 20px;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s, color 0.3s;
+}
+
+/* About Section */
+.about h2 {
+	margin-bottom: 20px;
+}
+
+.about div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	justify-content: center;
+}
+
+.about div img {
+	float: left;
+	border-radius: 50%;
+	width: 15em;
+	height: 15em;
+	object-fit: cover;
+}
+
+#aboutdetails {
+	display: inline;
+	width: 45em;
+}
+
+#aboutdetails summary {
+	display: block;
+	cursor: pointer;
+}
+
+#aboutdetails summary:focus {
+	outline: none;
+}
+
+#aboutdetails[open] {
+	/* padding-bottom: 25px;
+				padding-top: 10px; */
+	animation: open 0.2s linear;
+}
+
+#readmore {
+	text-decoration: underline;
+}
+
+#aboutdetails[open] #readmore {
+	display: none;
+}
+
+#readless {
+	display: none;
+}
+
+#aboutdetails[open] #readless {
+	display: block;
+	text-decoration: underline;
+}
+
+::-webkit-details-marker {
+	display: none;
+}
+
+@keyframes open {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Projects Section */
+.projects h2 {
+	margin-bottom: 20px;
+}
+
+.projects {
+	margin-bottom: 20px;
+}
+
+.projects h3 {
+	margin-bottom: 10px;
+}
+
+.project-card {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+	margin-top: 20px;
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .project-card {
+	background: #1e1e1e;
+	box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.project-card img {
+	width: 100%;
+	display: block;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-card .card-content {
+	padding: 20px;
+}
+
+.project-card .card-content h3 {
+	margin-bottom: 10px;
+}
+
+.project-card .card-content p {
+	margin: 0;
+}
+
+#projectdetails li {
+	list-style-type: square;
+}
+
+/* Skills Section */
+.skills h2 {
+	margin-bottom: 20px;
+}
+
+.skills h3 {
+	margin: 7px;
+	font-weight: 500;
+}
+
+.skills h3 span {
+	font-weight: 100;
+	font-size: smaller;
+	color: grey;
+}
+
+.skills ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.skills ul li {
+	background: #e2e2e2;
+	margin: 5px;
+	padding: 10px 15px;
+	border-radius: 4px;
+}
+
+/* Contact Section */
+.contact h2 {
+	margin-bottom: 20px;
+}
+
+.contact form {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact form input,
+.contact form textarea {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.contact form button {
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background: #333;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.contact form button:hover {
+	background: #555;
+}
+
+/* Footer */
+footer {
+	background: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+	background: #121212;
+	color: #e0e0e0;
+}
+
+.dark-mode header,
+.dark-mode footer {
+	background: #1e1e1e;
+}
+
+.dark-mode nav ul li a {
+	color: #e0e0e0;
+}
+
+.dark-mode .about,
+.dark-mode .projects,
+.dark-mode .skills,
+.dark-mode .contact {
+	background: #1e1e1e;
+	color: #e0e0e0;
+	box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .skills ul li {
+	background: #333;
+}
+
+.dark-mode .contact form input,
+.dark-mode .contact form textarea {
+	background: #333;
+	color: #e0e0e0;
+	border: 1px solid #555;
+}
+
+.dark-mode .contact form button {
+	background: #555;
+}
+
+.onmediumandsmall {
+	display: none;
+}
+
+@media only screen and (max-width: 1080px) {
+	.notonmedium {
+		display: none;
+	}
+
+	.onmediumandsmall {
+		display: block;
+	}
+
+	.profile-info h1 {
+		font-size: 40px;
+		/* margin-bottom: 10px; */
+	}
+
+	.profile-info p {
+		font-size: 24px;
+		font-weight: normal;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	/* body {
+					background-color: lightblue;
+				} */
+	.container {
+		width: 100%;
+	}
+
+	header h1 {
+		display: none;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	.dark-mode-toggle {
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+	}
+
+	.navbar {
+		justify-content: center;
+	}
+}

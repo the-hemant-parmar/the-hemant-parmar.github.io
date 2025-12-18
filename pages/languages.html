@@ -4,14 +4,14 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About</title>
+        <title>Languages</title>
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
         <style>
             #content {
-                /* margin: 0 20%; */
+                margin: 0 20%;
                 padding: 1% 5% 10%;
                 background-color: lightblue;
                 --bs-bg-opacity: 0.5;
@@ -45,45 +45,90 @@
             .lorem {
                 font-family: Arial, Helvetica, sans-serif;
             }
+            /* body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                } */
+            .skills-container {
+                /* height: 80vh; */
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .skills-list {
+                list-style: none;
+                padding: 0;
+            }
+            .skills-list li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 50px;
+            }
+            .skills-list img {
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+            }
         </style>
     </head>
     <body>
         <header class="bg-primary text-white text-center">
-            <h1>About</h1>
+            <h1 style="position: sticky; top: 0px">Languages</h1>
         </header>
         <div class="container my-5">
             <section>
-                <h2>About</h2>
+                <h2><a href="about.html">About</a></h2>
             </section>
-            <div id="content">
-                <img
-                    class="img-fluid"
-                    id="banner"
-                    src="jumbotron.jpg"
-                    alt="a general landscape image."
-                />
-                <hr />
-                <!-- <h2 class="subheading">about me</h2> -->
-                <p class="lorem Lead">
-                    Hello, I am Hemant Parmar. I am currently a sophomore at VIT
-                    Bhopal University where I am pursuing my B.Tech. in Computer
-                    Science and Engineering. I have learnt web development
-                    especially MERN stack. I also have some experience with
-                    python back-end frameworks. I found myself very good at
-                    python having practiced it's major libraries like numpy,
-                    pandas, sckit-learn, flask, matplotlib and so on. Problem
-                    solving is also a comfortable field for me. I have practised
-                    DSA covering Graphs, Trees, Backtracking, linked lists and
-                    not-so-advanced dynamic programming. I also good at learning
-                    topics more easily which are generally estimated as
-                    difficult.
-                </p>
-            </div>
             <section>
                 <h2><a href="education.html">Education</a></h2>
             </section>
             <section>
-                <h2><a href="languages.html">Languages</a></h2>
+                <h2>Languages</h2>
+
+                <div class="skills-container">
+                    <ul class="skills-list">
+                        <li>
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                alt="Python Logo"
+                            />
+                            Python
+                        </li>
+                        <li>
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                                alt="JavaScript Logo"
+                            />
+                            JavaScript
+                        </li>
+                        <li>
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
+                                alt="C++ Logo"
+                            />
+                            C++
+                        </li>
+                        <li>
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+                                alt="Java Logo"
+                            />
+                            Java
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section>
                 <h2><a href="skills.html">Skills</a></h2>
@@ -92,6 +137,7 @@
                 <h2><a href="projects.html">Projects</a></h2>
             </section>
         </div>
+
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item">
